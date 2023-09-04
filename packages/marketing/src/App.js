@@ -5,7 +5,10 @@ import { StylesProvider, createGenerateClassName } from '@material-ui/core';
 import Landing from './components/Landing';
 import Pricing from './components/Pricing';
 
-const generateClassName = createGenerateClassName({ productionPrefix: 'mar' });
+const generateClassName = createGenerateClassName({
+  productionPrefix: 'ma',
+  seed: 'ma'
+});
 
 export default ({ history }) => {
   return (

@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { StylesProvider, createGenerateClassName } from '@material-ui/core';
 import Progress from './components/Progress';
 
-const generateClassName = createGenerateClassName({ productionPrefix: 'con' });
+const generateClassName = createGenerateClassName({ productionPrefix: 'co' });
 
 const MarketingApp = lazy(() => import('./components/MarketingApp'));
 const AuthApp = lazy(() => import('./components/AuthApp'));

@@ -1,7 +1,10 @@
 import React, { Suspense, lazy, useState } from 'react';
 import Header from './components/Header';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { StylesProvider, createGenerateClassName } from '@material-ui/core';
+import {
+  StylesProvider,
+  createGenerateClassName
+} from '@material-ui/core/styles';
 import Progress from './components/Progress';
 
 const generateClassName = createGenerateClassName({

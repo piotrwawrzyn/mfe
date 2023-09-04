@@ -4,7 +4,7 @@ import { StylesProvider, createGenerateClassName } from '@material-ui/core';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 
-const generateClassName = createGenerateClassName({ productionPrefix: 'aut' });
+const generateClassName = createGenerateClassName({ productionPrefix: 'auth' });
 
 export default ({ history, onSignIn }) => {
   return (

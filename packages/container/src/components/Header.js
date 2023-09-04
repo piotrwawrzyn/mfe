@@ -6,41 +6,41 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link as RouterLink } from 'react-router-dom';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   '@global': {
     ul: {
       margin: 0,
       padding: 0,
-      listStyle: 'none',
+      listStyle: 'none'
     },
     a: {
-      textDecoration: 'none',
-    },
+      textDecoration: 'none'
+    }
   },
   appBar: {
-    borderBottom: `1px solid ${theme.palette.divider}`,
+    borderBottom: `1px solid ${theme.palette.divider}`
   },
   toolbar: {
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
   },
   link: {
-    margin: theme.spacing(1, 1.5),
+    margin: theme.spacing(1, 1.5)
   },
   heroContent: {
-    padding: theme.spacing(8, 0, 6),
+    padding: theme.spacing(8, 0, 6)
   },
   cardHeader: {
     backgroundColor:
       theme.palette.type === 'light'
         ? theme.palette.grey[200]
-        : theme.palette.grey[700],
+        : theme.palette.grey[700]
   },
   cardPricing: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'baseline',
-    marginBottom: theme.spacing(2),
+    marginBottom: theme.spacing(2)
   },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
@@ -49,16 +49,16 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(3),
     [theme.breakpoints.up('sm')]: {
       paddingTop: theme.spacing(6),
-      paddingBottom: theme.spacing(6),
-    },
-  },
+      paddingBottom: theme.spacing(6)
+    }
+  }
 }));
 
-export default function Header({ signedIn, onSignOut }) {
+export default function Header({ isSignedIn, onSignOut }) {
   const classes = useStyles();
 
   const onClick = () => {
-    if (signedIn && onSignOut) {
+    if (isSignedIn && onSignOut) {
       onSignOut();
     }
   };
@@ -86,10 +86,10 @@ export default function Header({ signedIn, onSignOut }) {
             variant="outlined"
             className={classes.link}
             component={RouterLink}
-            to={signedIn ? '/' : '/auth/signin'}
+            to={isSignedIn ? '/' : '/auth/signin'}
             onClick={onClick}
           >
-            {signedIn ? 'Logout' : 'Login'}
+            {isSignedIn ? 'Logout' : 'Login'}
           </Button>
         </Toolbar>
       </AppBar>
